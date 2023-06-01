@@ -1,0 +1,203 @@
+﻿* {
+    box-sizing: border-box;
+    font-family: 'Century Gothic';
+    color: rgb(255,255,255);
+    font-size: 20px;
+}
+
+body {
+    margin: 0px;
+}
+
+h1 {
+    color: rgb(208,155,207);
+    font-weight: normal;
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0px;
+    white-space: nowrap;
+}
+
+nav li {
+    border: 5px solid rgb(0,0,0);
+    display: inline-block;
+    width: 16.66666666666%;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(150,150,150);
+}
+
+a:hover {
+    color: rgb(186,0,181);
+}
+
+input, select {
+    color: rgb(0,0,0);
+}
+
+#questionOneOptional {
+    margin-left: 50px;
+}
+
+#background {
+    background-image: linear-gradient(to bottom right, dimgray, black);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#outerDiv {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+#welcome {
+    color: rgb(166,166,166);
+    font-size:inherit;
+}
+
+#picture {
+    float: left;
+    max-width: 50%;
+    box-shadow: 0px 0px 50px rgb(186,0,181);
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+#homeVideo {
+    width: 1200px;
+    height: auto;
+    max-width: 100%;
+}
+
+#oscButton {
+    color: rgb(0,0,0);
+}
+
+#infoBlock {
+    margin-bottom: 20px;
+}
+
+#infoBlock label {
+    display: inline-block;
+    width: 350px;
+}
+
+#visualizer {
+    border: 1px solid rgb(0,0,0);
+}
+
+.leftImage, .rightImage {
+    box-shadow: 0px 0px 50px rgb(186,0,181);
+    max-width: 47%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.leftImage {
+    left: 0%;
+}
+
+.rightImage {
+    right: 0%;
+}
+
+.leftText, .rightText {
+    max-width: 50%;
+}
+
+.leftText {
+    float: left;
+}
+
+.rightText {
+    float: right;
+}
+
+.gsImage {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.startImage {
+    background-color: rgb(255,255,255);
+    box-shadow: 0px 0px 50px rgb(186,0,181);
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.mTheoryBlock {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* This next block prevents overlaps in the div elements. Works better than "overflow", which was cutting off the glow around images
+    - HS 02/07
+*/
+.mTheoryBlock::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width:1199px){
+    /* This makes sure the text in the menu shrinks at the same time the menu boxes shrink - HS 03/07*/
+    nav a {
+        font-size: 1.7vw;
+    }
+}
+
+@media screen and (max-width:991px){
+    #picture {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    .leftImage, .rightImage {
+        max-width: 50%;
+        position: static;
+        top: 0%;
+        transform: none;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    .leftText, .rightText {
+        max-width: 100%;
+        float: none;
+    }
+
+    .mTheoryBlock {
+        position: static;
+    }
+}
+
+@media screen and (max-width:767px){
+    nav li {
+        display: block;
+        width: 100%;
+    }
+
+    nav a {
+        font-size: 40px;
+    }
+
+    #visualizer {
+        height: 280px;
+        width: 280px;
+    }
+}

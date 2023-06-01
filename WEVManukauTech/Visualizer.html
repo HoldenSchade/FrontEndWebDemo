@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Visualizer</title>
+    <link href="StyleSheets/MainTheme.css" rel="stylesheet" />
+    <script type="text/javascript" src="Scripts/XSiteControls.js"></script>
+    <script type="text/javascript" src="Scripts/Oscillator.js"></script>
+</head>
+<body>
+    <div id="background">
+        <div id="outerDiv">
+            <h1 id="siteName">
+                MusicalOdyssey.co.nz - THIS IS A STUDENT WEBSITE
+            </h1>
+
+            <nav id="navMenu">
+                <!-- Auto-load navMenu here using javascript - HS 20/06-->
+            </nav>
+
+            <h1 id="mainHeader">
+                Visualizer
+            </h1>
+
+            <div id="infoBlock">
+                <h2>
+                    Try it yourself!
+                </h2>
+
+                <p>
+                    Try playing around with frequencies and loudness. When you click the Start button, a sine wave will play using the
+                    frequency and loudness you have entered. The color of the circle will change based on the frequency you choose.
+                    The size and position of the circle will be completely random. If you enter anything other than a number into the "Frequency"
+                    field, the circle created will be black and no sound will play.
+                    Note: You will probably not be able to hear sound around the 20Hz and 20,000Hz
+                    frequencies, as these are the limits of human hearing.
+                </p>
+                <label for="frequency">Enter a frequency (Hz):</label>
+                <input id="frequency" type="number" name="frequency" value="440" /><br />
+                <label for="loudness">Enter a "loudness" between 0 and 1:</label>
+                <input id="loudness" type="number" name="loudness" value="0.05" min="0" max="1" step="0.01"/><br /><br />
+                <button id="oscButton" onclick="startOsc(), drawCircle()">Start</button>
+            </div>
+
+            <canvas id="visualizer" height="720" width="720">
+
+            </canvas>
+        </div>
+    </div>
+</body>
+</html>

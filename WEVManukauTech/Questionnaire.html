@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Questionnaire</title>
+    <link href="StyleSheets/MainTheme.css" rel="stylesheet" />
+    <script type="text/javascript" src="Scripts/XSiteControls.js"></script>
+    <script type="text/javascript" src="Scripts/QuestionnaireScript.js"></script>
+</head>
+<body>
+    <div id="background">
+        <div id="outerDiv">
+            <h1 id="siteName">
+                MusicalOdyssey.co.nz - THIS IS A STUDENT WEBSITE
+            </h1>
+
+            <nav id="navMenu">
+                <!-- Auto-load navMenu here using javascript - HS 20/06-->
+            </nav>
+
+            <h1 id="mainHeader">
+                Questionnaire
+            </h1>
+
+            <p>
+                Please answer some anonymous questions about your experience with music. This information will be used to help us get a better
+                understanding of who is visiting this website, and how we can provide the most useful information possible.
+                <br />
+                &nbsp;
+            </p>
+
+            <form action="https://wevmit01.azurewebsites.net/formtest.cshtml" method="post">
+                <p>
+                    Q1) Do you already play music?
+                </p>
+                <input type="radio" id="playMusicYes" name="playMusic" value="Yes" required onclick="setQuestionVisible()" />
+                <label for="Yes">Yes</label>
+                <input type="radio" id="playMusicNo" name="playMusic" value="No" required onclick="setQuestionInvisible()" />
+                <label for="Yes">No</label>
+                <br />
+                <div id="questionOneOptional" hidden>
+                    <!--Initial status of this block will be hidden, and the inputs will NOT be required to submit the form. If Question 1
+            is answered with a "Yes", javascript will make this object visible, and its children will now be visible - HS 29/06
+            -->
+                    <p>
+                        Q1a) What instrument do you play?
+                    </p>
+                    <input type="text" id="whatInstrument" name="whatInstrument" />
+                    <p>
+                        Q1b) How old were you when you started playing music?
+                    </p>
+                    <input type="number" id="startAge" name="startAge" />
+                </div>
+                <p>
+                    Q2) How much has this website motivated you to learn an instrument?
+                </p>
+                <select id="motivation" name="motivation" required>
+                    <option value="">--------- Please Select an item from this list ---------</option>
+                    <option value="mot1">Not at all</option>
+                    <option value="mot2">A little</option>
+                    <option value="mot3">A fair amount</option>
+                    <option value="mot4">A lot</option>
+                    <option value="mot5">I will definitely start learning an instrument now</option>
+                </select>
+                <br />
+                <p>
+                    Q3) How important is music (playing or listening) in your life?
+                </p>
+                <select id="importance" name="importance" required>
+                    <option value="">--------- Please Select an item from this list ---------</option>
+                    <option value="imp1">Not important at all</option>
+                    <option value="imp2">A little</option>
+                    <option value="imp3">A fair amount</option>
+                    <option value="imp4">A lot</option>
+                    <option value="imp5">Can't live without it</option>
+                </select>
+                <p>
+                    Q4) How do you usually listen to music?
+                </p>
+                <div id="checkBoxes">
+                    <input type="checkbox" id="listening1" name="listening1" value="radio" onclick="checkChecked()" title="Please check at least one box" required>
+                    <label for="listening1">Radio</label><br />
+                    <input type="checkbox" id="listening2" name="listening2" value="tv" onclick="checkChecked()" title="Please check at least one box" required>
+                    <label for="listening2">TV</label><br />
+                    <input type="checkbox" id="listening3" name="listening3" value="onlineStreaming" onclick="checkChecked()" title="Please check at least one box" required>
+                    <label for="listening3">Online (Streaming)</label><br />
+                    <input type="checkbox" id="listening4" name="listening4" value="onlineOther" onclick="checkChecked()" title="Please check at least one box" required>
+                    <label for="listening4">Online (Other)</label><br />
+                    <input type="checkbox" id="listening5" name="listening5" value="live" onclick="checkChecked()" title="Please check at least one box" required>
+                    <label for="listening5">Live Music</label><br />
+                    <input type="checkbox" id="listening6" name="listening6" value="noMusic" onclick="checkChecked()" title="Please check at least one box" required>
+                    <label for="listening6">I don't listen to music</label><br />
+                    <input type="checkbox" id="listening7" name="listening7" value="other" onclick="otherSelected(); checkChecked()" title="Please check at least one box" required>
+                    <label for="listening7">Other</label><br />
+                </div>
+                <div id="listening8container" hidden>
+                    <label for="listening8">Please Specify:</label>
+                    <input type="text" id="listening8" name="listening8" />
+                </div>
+
+                <p>
+                    Q5) Do you have any suggestions for newcomers learning an instrument for the first time? (Optional)
+                </p>
+                <input type="text" id="suggestions" name="suggestions" size="46" /><br />
+                <br />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>
